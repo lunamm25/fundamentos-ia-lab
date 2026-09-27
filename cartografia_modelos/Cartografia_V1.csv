@@ -1,0 +1,18 @@
+Categoría;Modelo;Proveedor;Local/Cloud;Tamaño/Contexto;Hardware Mínimo;Tipo;Uso Recomendado;Fuente
+Generalista Premium;GPT-6 Astra;OpenAI;Cloud;No público / 1.05M tokens;Ninguno (Servidor);LLM;Investigación, agentes y automatización avanzada;https://openai.com/index/gpt-6-astra/ [developers...openai.com], [openai.com]
+Generalista Enterprise;Claude Sonnet 5;Anthropic;Cloud;No público / 1M tokens;Ninguno (Servidor);LLM;Productividad y análisis documental empresarial;https://www.anthropic.com/claude [anthropic.com], [platform.claude.com]
+Generalista Multimodal;Gemini 3.6 Flash;Google;Cloud;No público / 1M+ tokens;Ninguno (Servidor);Multimodal;Copilots, agentes y productividad;https://ai.google.dev [blog.google], [aireiter.com]
+Generalista Open Source;Llama 3.3 70B;Meta;Local/Cloud;70B / 128K tokens;48-64 GB VRAM;LLM;Despliegue privado y académico;https://www.llama.com [dev.meta.ai]
+Generalista Open Source;DeepSeek V4 Pro;DeepSeek;Cloud;No público / 1M tokens;Ninguno (Servidor);LLM;Automatización y desarrollo;https://www.deepseek.com [chat-deep.ai], [devtoolhub.com]
+Razonamiento;o3-pro;OpenAI;Cloud;No público / 200K tokens;Ninguno (Servidor);Reasoning LLM;Problemas complejos de alta precisión;https://openai.com [openai.com]
+Razonamiento;Gemini 3.1 Pro;Google;Cloud;No público / 1M tokens;Ninguno (Servidor);Reasoning Multimodal;Investigación científica y matemática;https://ai.google.dev [iacloserhub.com], [aireiter.com]
+Razonamiento;DeepSeek R1;DeepSeek;Local/Cloud;671B (37B activos) / 128K tokens;+32 GB RAM o GPU avanzada;Reasoning LLM;Matemáticas y algoritmos;https://www.deepseek.com [devtoolhub.com]
+Desarrollo de Software;Claude Sonnet 5;Anthropic;Cloud;No público / 1M tokens;Ninguno (Servidor);Coding LLM;Refactorización y arquitectura de software;https://www.anthropic.com/claude [anthropic.com]
+Desarrollo de Software;GPT-6 Astra;OpenAI;Cloud;No público / 1.05M tokens;Ninguno (Servidor);Coding LLM;Desarrollo full-stack y agentes;https://platform.openai.com/docs/models [developers...openai.com], [developers...openai.com]
+Desarrollo de Software;Gemini 3.6 Flash;Google;Cloud;No público / 1M+ tokens;Ninguno (Servidor);Coding LLM;Automatización y desarrollo diario;https://ai.google.dev [blog.google], [aireiter.com]
+Coding Open Source;Qwen3-Coder 30B-A3B;Qwen / Alibaba;Local/Cloud;30B / 256K tokens;24-32 GB VRAM;Coding;Copilot local y programación autónoma;https://qwen.ai [qwen.ai], [huggingface.co]
+Multimodal Open Source;LLaVA-OneVision;LLaVA OSS;Local;7B-72B / 128K tokens;16-48 GB VRAM;VLM;Visión artificial privada;https://llava-vl.github.io [arxiv.org], [evolvinglm....github.io]
+Voz (STT);Whisper large-v3;OpenAI;Local/Cloud;1.5B parámetros;8 GB RAM / 4 GB VRAM;Speech-to-Text;Transcripción de reuniones y clases;https://github.com/openai/whisper
+Voz (TTS);ElevenLabs v3;ElevenLabs;Cloud;No público;Ninguno (Servidor);Text-to-Speech;Generación de voz natural;https://elevenlabs.io
+Embeddings;text-embedding-3-large;OpenAI;Cloud;No público / 8K tokens;Ninguno (Servidor);Embeddings;RAG empresarial;https://platform.openai.com/docs/guides/embeddings
+Embeddings;nomic-embed-text-v1.5;Nomic AI;Local;137M parámetros / 8K tokens;4 GB RAM / 2 GB VRAM;Embeddings;Búsqueda semántica y RAG local;https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
