@@ -1,0 +1,21 @@
+{
+  "dias": 731,
+  "entrenamiento_hasta": "2025-08-06",
+  "prueba_desde": "2025-08-07",
+  "dias_entrenamiento": 584,
+  "dias_prueba": 147,
+  "MAE_persistencia": 0.4769,
+  "RMSE_persistencia": 0.6114,
+  "MAE_regresion": 0.4083,
+  "RMSE_regresion": 0.5168,
+  "intercepto": 2.1251,
+  "pesos_del_mas_viejo_al_mas_reciente": [
+    0.048,
+    0.109,
+    -0.014,
+    0.0776,
+    0.0454,
+    0.0638,
+    0.5281
+  ]
+}
