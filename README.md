@@ -16,20 +16,20 @@ Trabajamos de forma remota en dos sesiones por Google Meet el 22 de septiembre d
 ## Cómo está organizado
 
 ```text
-mapa\\\\\\\\\\\\\\\_mental/          C0  mapa en PNG y PDF
-cartografia\\\\\\\\\\\\\\\_modelos/  C1  matriz de modelos (CSV)
-modelos\\\\\\\\\\\\\\\_locales/      C2  programas que usan la API local y registro de las pruebas
-vibe\\\\\\\\\\\\\\\_coding/          C3  prompt, tabla comparativa y código de cada modelo
+mapa_mental/          C0  mapa en PNG y PDF
+cartografia_modelos/  C1  matriz de modelos (CSV)
+modelos_locales/      C2  programas que usan la API local
+vibe_coding/          C2 y C3  registro técnico, prompt, tabla comparativa y código de cada modelo
 serie_temporal/       C4  aplicación de series temporales y resultados (output/)
 tests/                pruebas del C4
-evidence/             capturas: c2\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\* modelos locales, c3\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\* vibe coding
+evidence/             capturas: c2_* modelos locales, c3_* vibe coding
 ```
 
 ## Instalación
 
 ```bash
 python -m venv .venv
-.venv\\\\\\\\\\\\\\\\Scripts\\\\\\\\\\\\\\\\activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -37,11 +37,11 @@ Ninguna parte necesita API key. Las APIs que usamos (Open-Meteo) son públicas.
 
 ## C0 · Mapa mental
 
-`mapa\\\\\\\\\\\\\\\_mental/mapa\\\\\\\\\\\\\\\_mental.png` y `mapa\\\\\\\\\\\\\\\_mental.pdf`. Tiene las cinco ramas que pide la guía: fundamentos, tipos de modelos, funcionamiento, formas de uso e infraestructura. De cada concepto pusimos qué es, para qué sirve, un ejemplo y en qué parte del laboratorio lo usamos. Las líneas punteadas unen conceptos de ramas distintas, por ejemplo Transformers con LLM o cuantización con VRAM.
+`mapa_mental/mapa_mental.png` y `mapa_mental.pdf`. Tiene las cinco ramas que pide la guía: fundamentos, tipos de modelos, funcionamiento, formas de uso e infraestructura. De cada concepto pusimos qué es, para qué sirve, un ejemplo y en qué parte del laboratorio lo usamos. Las líneas punteadas unen conceptos de ramas distintas, por ejemplo Transformers con LLM o cuantización con VRAM.
 
 ## C1 · Cartografía de modelos
 
-`cartografia\\\\\\\\\\\\\\\_modelos/Cartografia\\\\\\\\\\\\\\\_Modelos.csv`: 11 modelos en seis categorías (texto, razonamiento, código, visión/multimodal, voz y embeddings), con proveedor, tipo, si es local o cloud, tamaño, hardware, costo y uso recomendado.
+`cartografia_modelos/Cartografía Modelos de IA.csv`: 20 modelos en seis categorías (texto, razonamiento, código, visión/multimodal, voz y embeddings), con proveedor, tipo, si es local o cloud, tamaño, hardware, costo y uso recomendado.
 
 
 
@@ -52,7 +52,9 @@ Si trabajamos con código propietario o información confidencial, primero debem
 
 Cuando la tarea exige razonamiento profundo, investigación o desarrollo de software complejo, los servicios en la nube amplían las opciones. GPT-6 Astra puede apoyar flujos de trabajo avanzados y agentes; Claude Sonnet 5 resulta pertinente para programación y documentación técnica; y Gemini 3.1 Pro se orienta a problemas de investigación y razonamiento exigente. Para asistencia cotidiana dentro del entorno de desarrollo, GitHub Copilot y Gemini Code Assist son opciones prácticas, siempre que su uso cumpla las políticas de la empresa.
 
-La elección también depende del tipo de información. Para analizar imágenes y documentos podemos evaluar Gemini 3.6 Flash o, si necesitamos una alternativa local de visión, LLaVA-OneVision. Para transcribir audio contamos con Whisper large-v3, mientras que ElevenLabs v3 cubre la generación de voz. Si el objetivo es construir un sistema de búsqueda sobre documentos internos, nomic-embed-text-v1.5 ofrece una opción local y text-embedding-3-large una alternativa mediante API.C2 · Modelos locales
+La elección también depende del tipo de información. Para analizar imágenes y documentos podemos evaluar Gemini 3.6 Flash o, si necesitamos una alternativa local de visión, LLaVA-OneVision. Para transcribir audio contamos con Whisper large-v3, mientras que ElevenLabs v3 cubre la generación de voz. Si el objetivo es construir un sistema de búsqueda sobre documentos internos, nomic-embed-text-v1.5 ofrece una opción local y text-embedding-3-large una alternativa mediante API.
+
+## C2 · Modelos locales
 
 Probamos en un portátil con Ryzen 5 4600H, 16 GB de RAM y gráficos integrados, sin tarjeta de video dedicada.
 
@@ -63,18 +65,18 @@ Probamos en un portátil con Ryzen 5 4600H, 16 GB de RAM y gráficos integrados,
 |LM Studio|Llama 3.2 3B Instruct, Q4\_K\_M|`localhost:1234`|
 
 ```bash
-python modelos\\\\\\\\\\\\\\\_locales/ollama\\\\\\\\\\\\\\\_test.py
-python modelos\\\\\\\\\\\\\\\_locales/lmstudio\\\\\\\\\\\\\\\_test.py
+python modelos_locales/ollama_test.py
+python modelos_locales/lmstudio_test.py
 ```
 
-Los tiempos, la memoria y lo que encontramos al comparar están en `modelos\\\\\\\\\\\\\\\_locales/registro\\\\\\\\\\\\\\\_tecnico.md`.
+Los tiempos, la memoria y lo que encontramos al comparar están en `vibe_coding/registro_tecnico.md`.
 
 ## C3 · Vibe Coding
 
-Como el docente no entregó un problema, usamos el ejemplo de la guía: consumir una API pública, validar la respuesta, sacar estadísticas y graficar. Tomamos la temperatura por hora de Manizales en Open-Meteo y usamos el mismo prompt en los tres modelos. El prompt, la tabla y la reflexión están en `vibe\\\\\\\\\\\\\\\_coding/comparativo.md`.
+Escogimos un problema pequeño y fácil de verificar: consumir una API pública, validar la respuesta, sacar estadísticas y graficar. Tomamos la temperatura por hora de Manizales en Open-Meteo y usamos el mismo prompt en los tres modelos. El prompt está en `vibe_coding/problema_y_prompt.md` y la tabla y la reflexión en `vibe_coding/comparativo_de_modelos.md`. El código de cada modelo quedó en `vibe_coding/cloud/clima.py`, `vibe_coding/clima_llama.py` y `vibe_coding/clima_qwen.py`.
 
 ```bash
-cd vibe\\\\\\\\\\\\\\\_coding/cloud
+cd vibe_coding/cloud
 python clima.py
 ```
 
@@ -102,7 +104,7 @@ El detalle del proceso está en `serie_temporal/proceso.md` y las gráficas en `
 |C2|llama3.2:3b, qwen2.5-coder:3b|Ollama|22/09/2026|
 |C2|Llama 3.2 3B Instruct Q4\_K\_M|LM Studio|22/09/2026|
 |C3 cloud|ChatGPT (versión que mostraba la app: 5.6 luna)|chatgpt.com|22/09/2026|
-|C3 local|llama3.2:3b, qwen2.5-coder:3b|Ollama|gpt 5.6 luna|
+|C3 local|llama3.2:3b, qwen2.5-coder:3b|Ollama|27/09/2026|
 |C4|Grok 4.7|Cursor|22/09/2026|
 |C1|Gemini 3.1 Pro|Google|22/09/2026|
 
@@ -136,6 +138,9 @@ La intervención humana fue estrictamente necesaria para:   Comprender los contr
 Validación semántica: Interpretar que una gráfica de 14 días une 7 días históricos con 7 de pronóstico numérico, aspecto crítico que ningún modelo advirtió por sí solo.   
 
 En conclusión, los modelos locales de 3 mil millones de parámetros son herramientas de apoyo útiles para generar esqueletos sintácticos iniciales o resolver dudas puntuales de funciones, pero en flujos de desarrollo autónomo guiado por errores (Vibe Coding), demandan un nivel de supervisión técnica exhaustivo y prompts con especificaciones muy estrictas para no derivar en código roto. 
+
+
+
 
 
 
